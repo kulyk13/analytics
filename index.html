@@ -3,7 +3,11 @@
 
 <head>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preload" href="css/style.css" as="style" type="text/css">
+    <link rel="preload" onload="this.onload=null;this.rel='stylesheet'"
+        href="css/style.css" as="style" type="text/css" />
+    <link rel="preload" onload="this.onload=null;this.rel='stylesheet'"
+        href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        as="style" type="text/css" />
 
     <meta charset="UTF-8">
     <meta name="description"
@@ -11,7 +15,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ANALYTICS</title>
     <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -128,7 +131,7 @@
             </div>
         </div>
     </article>
-    <article class="price">
+    <article class="price-section">
         <div class="container">
             <h2 class="section-title">Pricing Plans</h2>
             <p class="price-text">Lorem ipsum dolor sit amet, consectetur
@@ -141,8 +144,9 @@
                     <div class="price">
                         <h4>$29</h4>
                         <p>per month</p>
-                        <button>Order</button>
                     </div>
+                    <button type="submit" name="sign in"
+                        class="btn-order">Order</button>
                 </div>
                 <div class="price-card">
                     <h3>Standard</h3>
@@ -150,8 +154,9 @@
                     <div class="price">
                         <h4>$99</h4>
                         <p>per month</p>
-                        <button>Order</button>
                     </div>
+                    <button type="submit" name="sign in"
+                        class="btn-order">Order</button>
                 </div>
                 <div class="price-card">
                     <h3>Premium</h3>
@@ -159,42 +164,47 @@
                     <div class="price">
                         <h4>$299</h4>
                         <p>per month</p>
-                        <button>Order</button>
                     </div>
+                    <button type="submit" name="sign in"
+                        class="btn-order">Order</button>
                 </div>
             </div>
         </div>
     </article>
     <footer class="footer">
         <div class="container">
-            <a href="index.html" class="logo">
-                <img src="img/footer-logo.svg" width="1" height="1"
-                    alt="logo pic">
-                ANALYTICS
-            </a>
-            <ul class="nav">
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Blog</a></li>
-            </ul>
-            <ul class="social-networks">
-                <li><a href="https://www.facebook.com"
-                        rel="nofollow noopener noreferer">
-                        <i class="fab fa-facebook-f"></i></a>
-                </li>
-                <li><a href="https://www.twitter.com"
-                        rel="nofollow noopener noreferer">
-                        <i class="fab fa-twitter"></i></a>
-                </li>
-                <li><a href="https://www.instagram.com"
-                        rel="nofollow noopener noreferer">
-                        <i class="fab fa-instagram"></i></a>
-                </li>
-            </ul>
+            <div class="footer-wrap">
+                <a href="index.html" class="logo">
+                    <img src="img/footer-logo.svg" width="1" height="1"
+                        alt="logo pic">
+                    ANALYTICS
+                </a>
+                <ul class="nav">
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+                <ul class="social-networks">
+                    <li><a href="https://www.facebook.com" target="_blank"
+                            title="Facebook" rel="nofollow noopener noreferer"
+                            aria-label="go to facebook">
+                            <i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li><a href="https://www.twitter.com" target="_blank"
+                            title="Teitter" aria-label="go to twitter"
+                            rel="nofollow noopener noreferer">
+                            <i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li><a href="https://www.instagram.com" target="_blank"
+                            title="Instagram" aria-label="go to instagram"
+                            rel="nofollow noopener noreferer">
+                            <i class="fab fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </footer>
-    <script src="js/main.js"></script>
 </body>
 
 </html>
