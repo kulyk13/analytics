@@ -634,3 +634,119 @@ h1 {
   color: var(--brand-color);
 }
 /* ============ FOOTER END ============ */
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .container {
+    max-width: 960px;
+  }
+  body {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  .main-pic {
+    width: 880px;
+    height: 580px;
+    right: -38%;
+  }
+  .analytic-wrap img {
+    width: 485px;
+    height: 331px;
+  }
+  .section-title {
+    font-size: 34px;
+  }
+  .price-text {
+    padding: 0 130px;
+  }
+  .price-card {
+    padding: 40px 40px 60px 40px;
+  }
+}
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .container {
+    max-width: 720px;
+  }
+  body {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  .logo {
+    margin-right: 30px;
+    font-size: 18px;
+  }
+  .logo img {
+    width: 30px;
+    height: 30px;
+  }
+  .nav a,
+  .nav + a {
+    margin-left: -5px;
+  }
+  .btn-sign {
+    padding: 10px 35px;
+    margin-left: 15px;
+  }
+  .btn-offer {
+    margin-top: 30px;
+    padding: 16px 60px;
+  }
+  .main-pic {
+    width: 815px;
+    height: 525px;
+    right: -59%;
+  }
+  .features {
+    padding-top: 130px;
+  }
+  .analytics {
+    padding-bottom: 150px;
+  }
+  .analytic-wrap img {
+    width: 350px;
+    height: 239px;
+  }
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  .footer {
+    padding-top: 100px;
+  }
+  .price-section {
+    padding-bottom: 70px;
+  }
+  .price-card {
+    padding: 30px 30px 50px 30px;
+  }
+  .price-card h3 {
+    font-size: 20px;
+  }
+  .price-card h4 {
+    font-size: 40px;
+  }
+  .btn-order {
+    padding: 16px 55px;
+  }
+}
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .container {
+    max-width: 540px;
+  }
+}
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .container {
+    max-width: 100%;
+  }
+}
+/* XS-Small devices (iPhone5/5s, SE, equals to 320px) */
+@media (max-width: 320px) {
+}
