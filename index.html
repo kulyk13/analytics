@@ -3,6 +3,7 @@
 
 <head>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
     <link rel="preload" href="css/style.css" as="style" type="text/css" />
     <link rel="preload"
         href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
@@ -28,15 +29,24 @@
                             alt="logo pic" />
                         Analytics
                     </a>
-                    <ul class="nav">
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                    <a href="#">Sign In</a>
-                    <button type="submit" name="sign up" class="btn-sign">Sign
-                        Up</button>
+                    <div class="burger-menu" id="burgerMenu">
+                        <ul class="nav">
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                        <a href="#">Sign In</a>
+                        <button type="submit" name="sign up"
+                            class="btn-sign">Sign
+                            Up</button>
+                        <button class="btn-close" id="burgerBtnClose"><i
+                                class="fas fa-times"
+                                aria-label="close menu"></i></button>
+                    </div>
+                    <button class="btn-open" id="burgerBtnOpen"><i
+                            class="fas fa-bars"
+                            aria-label="open menu"></i></button>
                 </div>
             </div>
         </header>
@@ -54,7 +64,7 @@
                         class="btn-offer">Try for free</button>
                 </div>
                 <img src="img/main.webp" width="1" height="1" loading="lazy"
-                    alt="main graph" class="main-pic" />
+                    alt="main graph" class="main-pic" id="mainPic" />
             </div>
         </article>
         <article class="features">
@@ -155,37 +165,50 @@
                         Elementum nisi aliquet volutpat pellentesque
                         volutpat est.
                     </p>
-                    <div class="price-card-wrap">
-                        <div class="price-card">
-                            <h3>Starter</h3>
-                            <p>up to 3 users</p>
-                            <div class="price">
-                                <h4>$29</h4>
-                                <p>per month</p>
+                    <!-- Slider main container -->
+                    <div class="swiper-container card-container">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper price-card-wrap">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <div class="price-card">
+                                    <h3>Starter</h3>
+                                    <p>up to 3 users</p>
+                                    <div class="price">
+                                        <h4>$29</h4>
+                                        <p>per month</p>
+                                    </div>
+                                    <button type="button" name="sign in"
+                                        class="btn-order">Order</button>
+                                </div>
                             </div>
-                            <button type="button" name="sign in"
-                                class="btn-order">Order</button>
-                        </div>
-                        <div class="price-card">
-                            <h3>Standard</h3>
-                            <p>up to 20 users</p>
-                            <div class="price">
-                                <h4>$99</h4>
-                                <p>per month</p>
+                            <div class="swiper-slide">
+                                <div class="price-card">
+                                    <h3>Standard</h3>
+                                    <p>up to 20 users</p>
+                                    <div class="price">
+                                        <h4>$99</h4>
+                                        <p>per month</p>
+                                    </div>
+                                    <button type="button" name="sign in"
+                                        class="btn-order">Order</button>
+                                </div>
                             </div>
-                            <button type="button" name="sign in"
-                                class="btn-order">Order</button>
-                        </div>
-                        <div class="price-card">
-                            <h3>Premium</h3>
-                            <p>up to 200 users</p>
-                            <div class="price">
-                                <h4>$299</h4>
-                                <p>per month</p>
+                            <div class="swiper-slide">
+                                <div class="price-card">
+                                    <h3>Premium</h3>
+                                    <p>up to 200 users</p>
+                                    <div class="price">
+                                        <h4>$299</h4>
+                                        <p>per month</p>
+                                    </div>
+                                    <button type="button" name="sign in"
+                                        class="btn-order">Order</button>
+                                </div>
                             </div>
-                            <button type="button" name="sign in"
-                                class="btn-order">Order</button>
                         </div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
                     </div>
                 </section>
                 <div class="footer-wrap">
@@ -225,6 +248,13 @@
             </div>
         </footer>
     </div>
+    <link rel="preload" href="https://unpkg.com/swiper/swiper-bundle.min.css"
+        as="style" type="text/css">
+    <link rel="stylesheet"
+        href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script defer src="js/app.js"></script>
 </body>
 
 </html>

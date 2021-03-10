@@ -280,7 +280,7 @@ html {
   --text-on-dark-bg-color: hsl(225, 27%, 63%);
   --dark-bg-color: hsl(225, 57%, 21%);
   --light-bg-color: hsl(228, 100%, 99%);
-  --brand-color: hsl(333, 86%, 55%);
+  --brand-color: hsl(333, 86%, 48%);
   --line-color: hsl(224, 49%, 33%);
 }
 body {
@@ -373,6 +373,10 @@ h1 {
   width: 40px;
   height: 40px;
 }
+.burger-menu {
+  display: flex;
+  flex: 1;
+}
 .nav {
   display: flex;
   margin-right: auto;
@@ -394,6 +398,12 @@ h1 {
 .btn-sign {
   padding: 11px 53px;
   margin-left: 30px;
+}
+.btn-open {
+  display: none;
+}
+.btn-close {
+  display: none;
 }
 /* ============ HEADER END ============ */
 
@@ -544,8 +554,6 @@ h1 {
   text-align: center;
 }
 .price-card-wrap {
-  display: flex;
-  justify-content: space-between;
   margin-top: 80px;
 }
 .price-card {
@@ -554,6 +562,13 @@ h1 {
   background: hsla(224, 67%, 18%, 0.7);
   text-align: center;
   transition: 0.3s;
+}
+.swiper-slide-active > .price-card,
+.swiper-slide-active > .price-card h3,
+.swiper-slide-active > .price-card h4,
+.swiper-slide-active > .price-card .btn-order {
+  background-color: #fff;
+  color: var(--title-color);
 }
 .price-card:hover,
 .price-card:focus-within {
@@ -605,6 +620,9 @@ h1 {
   background-color: var(--brand-color);
   border: 1px solid var(--brand-color);
   color: #fff;
+}
+.card-container .swiper-pagination {
+  display: none;
 }
 .footer-wrap {
   display: flex;
@@ -740,13 +758,246 @@ h1 {
   .container {
     max-width: 540px;
   }
+  .header-wrap {
+    justify-content: space-between;
+  }
+  .burger-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--dark-bg-color);
+    padding: 50px;
+    transition: 0.5s;
+    transform: translateX(-100%);
+  }
+  .burger-menu.open {
+    transform: translateX(0);
+  }
+  .burger-menu .nav {
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+  }
+  .burger-menu .nav + a {
+    margin-top: 30px;
+    margin-left: 0;
+  }
+  .burger-menu .nav > li:nth-child(n + 2) {
+    margin: 0;
+  }
+  .btn-sign {
+    margin: 10px 0 0 0;
+  }
+  .btn-close {
+    display: inline-flex;
+    position: absolute;
+    right: calc(50% - 254px);
+    top: 47px;
+    padding: 8px 16px;
+  }
+  .btn-open {
+    display: inline-flex;
+    padding: 8px 16px;
+  }
+  .hero-section {
+    background: url(../img/bg-pic.svg) no-repeat calc(50% + 439px) 508px /
+        1000px,
+      url(../img/bg-pic.svg) no-repeat calc(50% - 300px) 40% / 470px,
+      var(--dark-bg-color);
+    padding-top: 640px;
+  }
+  .offer {
+    width: 76%;
+  }
+  h1 {
+    font-size: 38px;
+  }
+  .main-pic {
+    top: -10%;
+    right: -3%;
+    transform: translateX(70%);
+    width: 580px;
+    height: 383px;
+    transition: 0.6s;
+  }
+  .main-pic.slide {
+    transform: translateX(0);
+  }
+  .features {
+    padding-top: 100px;
+  }
+  .feature-text {
+    padding: 0 25px;
+  }
+  .benefits-wrap {
+    font-size: 14px;
+  }
+  .analytic-wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+  .analytic-wrap:nth-child(odd) > img {
+    order: 0;
+  }
+  .analytic-wrap img {
+    width: 485px;
+    height: 331px;
+    margin-bottom: 25px;
+  }
+  .analytic-wrap:nth-child(even) {
+    margin: 90px 0;
+  }
+  .analytic-text {
+    width: 86%;
+  }
+  .analytic-text .section-title {
+    font-size: 36px;
+  }
+  .price-section {
+    padding-bottom: 50px;
+  }
+  .price-text {
+    padding: 0 50px;
+  }
+  .swiper-container.card-container {
+    padding-bottom: 60px;
+  }
+  .price-card {
+    padding: 50px 60px 70px 60px;
+    width: 60%;
+    margin: 0 auto;
+    font-size: 16px;
+  }
+  .price-card h3 {
+    font-size: 36px;
+  }
+  .price-card h4 {
+    font-size: 52px;
+  }
+  .btn-order {
+    padding: 16px 80px;
+  }
+  .swiper-container-horizontal
+    > .swiper-pagination-bullets
+    .swiper-pagination-bullet {
+    background-color: #fff;
+  }
+  .card-container .swiper-pagination {
+    display: block;
+  }
+  .footer {
+    padding-bottom: 45px;
+  }
+  .footer-wrap {
+    flex-direction: column;
+  }
+  .footer-wrap .logo {
+    order: 1;
+    margin-top: 20px;
+  }
+  .footer-wrap .nav {
+    flex-direction: column;
+    font-size: 16px;
+  }
+  .footer-wrap .nav li:nth-child(n + 2) {
+    margin-left: 0;
+    text-align: center;
+  }
+  .social-networks {
+    order: 1;
+  }
 }
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
   .container {
     max-width: 100%;
   }
+  .btn-close {
+    right: 16px;
+  }
+  .main-pic {
+    right: -2%;
+    width: 450px;
+    height: 300px;
+  }
+  .features {
+    padding-bottom: 100px;
+  }
+  .benefits-wrap {
+    flex-wrap: wrap;
+    margin-top: 50px;
+  }
+  .benefit:nth-child(n + 2) {
+    margin-top: 30px;
+  }
+  .benefit h3 {
+    font-size: 18px;
+  }
+  .analytic-wrap img {
+    width: 400px;
+    height: 273px;
+  }
+  .analytic-text .section-title {
+    font-size: 32px;
+  }
+  .analytic-wrap:nth-child(even) {
+    margin: 60px 0;
+  }
+  .price-card {
+    padding: 40px 40px 50px 40px;
+  }
+  .price-card h3 {
+    font-size: 28px;
+  }
+  .price-card h4 {
+    font-size: 46px;
+  }
+  .btn-order {
+    padding: 16px 50px;
+  }
 }
-/* XS-Small devices (iPhone5/5s, SE, equals to 320px) */
-@media (max-width: 320px) {
+@media (max-width: 445.98px) {
+  .container {
+    max-width: 100%;
+  }
+  .hero-section {
+    padding-top: 590px;
+    padding-bottom: 100px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  .main-pic {
+    top: 2%;
+    width: 330px;
+    height: 222px;
+  }
+  .price-card {
+    width: 100%;
+  }
+  .features {
+    padding-top: 80px;
+  }
+  .analytic-wrap img {
+    width: 285px;
+    height: 195px;
+  }
+  .analytics {
+    padding-bottom: 100px;
+  }
+  .analytic-text .section-title {
+    font-size: 26px;
+  }
+  .footer {
+    padding-top: 70px;
+  }
+  .price-text {
+    padding: 0;
+  }
+  .btn-order {
+    padding: 16px 80px;
+  }
 }
