@@ -3,16 +3,10 @@ burgerBtnOpen.onclick = () => burgerMenu.classList.add('open');
 
 burgerBtnClose.onclick = () => burgerMenu.classList.remove('open');
 
+mainPic.onclick = () => mainPic.classList.toggle('slide');
 
 
-const mainPicEl = document.getElementById('mainPic');
-
-mainPicEl.addEventListener("click", event => {
-    const picEl = event.target.closest('.main-pic')
-    if (picEl) {
-        mainPicEl.classList.toggle('slide');
-    };
-}) 
+AOS.init();
 
 
 const swiper = new Swiper('.card-container', {
@@ -33,6 +27,5 @@ const swiper = new Swiper('.card-container', {
             slidesPerView: 3,
             spaceBetween: 50,
         }
-    }
+    } 
 });
-
